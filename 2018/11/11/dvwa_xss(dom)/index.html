@@ -200,7 +200,7 @@
     </div>
     <div class="content-article">
         <p>##XSS 简介<br>XSS（Cross Site Script），全称跨站脚本攻击，为了与 CSS（Cascading Style Sheet） 有所区别，所以在安全领域称为 XSS。<br>XSS 攻击，通常指黑客通过 HTML 注入 篡改网页，插入恶意脚本，从而在用户浏览网页时，控制用户浏览器的一种攻击行为。</p>
-<p>#####DOM—based XSS漏洞的产生<br>DOM—based XSS漏洞是基于文档对象模型Document Objeet Model，DOM)的一种漏洞。DOM是一个与平台、编程语言无关的接口，它允许程序或脚本动态地访问和更新文档内容、结构和样式，处理后的结果能够成为显示页面的一部分。DOM中有很多对象，其中一些是用户可以操纵的，如uRI，location，refelTer等。客户端的脚本程序可以通过DOM动态地检查和修改页面内容，它不依赖于提交数据到服务器端，而从客户端获得DOM中的数据在本地执行，如果DOM中的数据没有经过严格确认，就会产生DOM—based XSS漏洞。<br><a href="">DOM简介</a><br><a href="http://www.storysec.com/dvwa-xss-dom.html" target="_blank" rel="noopener">xss DOM</a><br>可能触发DOM型XSS的属性：</p>
+<p>#####DOM—based XSS漏洞的产生<br>DOM—based XSS漏洞是基于文档对象模型Document Objeet Model，DOM)的一种漏洞。DOM是一个与平台、编程语言无关的接口，它允许程序或脚本动态地访问和更新文档内容、结构和样式，处理后的结果能够成为显示页面的一部分。DOM中有很多对象，其中一些是用户可以操纵的，如uRI，location，refelTer等。客户端的脚本程序可以通过DOM动态地检查和修改页面内容，它不依赖于提交数据到服务器端，而从客户端获得DOM中的数据在本地执行，如果DOM中的数据没有经过严格确认，就会产生DOM—based XSS漏洞。<br><a href="https://www.jianshu.com/p/7b7f17879ceb" target="_blank" rel="noopener">DOM简介</a><br><a href="http://www.storysec.com/dvwa-xss-dom.html" target="_blank" rel="noopener">xss DOM</a><br>可能触发DOM型XSS的属性：</p>
 <p>document.referer属性</p>
 <p>window.name属性</p>
 <p>location属性</p>
@@ -211,8 +211,8 @@
 <p>###相关属性方法解释</p>
 <p>####1 document 和 windows 对象<br>document表示的是一个文档对象，window表示的是一个窗口对象，一个窗口下可以有多个文档对象。</p>
 <p>　　所以一个窗口下只有一个window.location.href，但是可能有多个document.URL、document.location.href</p>
-<p>[window 对象]<br>　　它是一个顶层对象,而不是另一个对象的属性即浏览器的窗口。</p>
-<p>[document 对象]<br>该对象是window和frames对象的一个属性,是显示于窗口或框架内的一个文档。</p>
+<p>window 对象<br>　　它是一个顶层对象,而不是另一个对象的属性即浏览器的窗口。</p>
+<p>document 对象<br>该对象是window和frames对象的一个属性,是显示于窗口或框架内的一个文档。</p>
 <p>document 只是属于window 的一个子对像。</p>
 <p>window.location 包含 href 属性，直接取值赋值时相当于 window.location.href</p>
 <p>window.location.href  当前页面完整 URL</p>
@@ -249,10 +249,9 @@
 <h4 id="document-write"><a href="#document-write" class="headerlink" title="document.write"></a>document.write</h4><p><a href="https://blog.csdn.net/m0_37589327/article/details/78992784" target="_blank" rel="noopener">document.write详解</a><br>document.write是JavaScript中对document.open所开启的文档流(document stream操作的API方法，它能够直接在文档流中写入字符串，一旦文档流已经关闭，那document.write就会重新利用document.open打开新的文档流并写入，此时原来的文档流会被清空，已渲染好的页面就会被清除，浏览器将重新构建DOM并渲染新的页面</p>
 <p>#####解释script 代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  if (document.location.href.indexOf(&quot;default=&quot;) &gt;= 0)   #判断  &quot;default=&quot; 是否存在</span><br><span class="line">  var lang = document.location.href.substring(document.location.href.indexOf(&quot;default=&quot;)+8) </span><br><span class="line"> # 取出 default 的值  并 赋值给变量lang</span><br><span class="line"></span><br><span class="line">document.write(&quot;&lt;option value=&apos;&quot; + lang + &quot;&apos;&gt;&quot; + decodeURI(lang) + &quot;&lt;/option&gt;&quot;);</span><br><span class="line">写入&lt;option value=&apos;&quot;lang&quot;&apos;&gt;&quot;decodeURL(lang)&lt;/option&gt;</span><br></pre></td></tr></table></figure></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/9202951-324042ad9482160f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>所以我们插入的 javascript 代码可以在  decodeURL(lang)  被执行</p>
-<p>###构造攻击语句<br>      <a href="http://127.0.0.1/dvwa-master/vulnerabilities/xss_d/?default=English" target="_blank" rel="noopener">http://127.0.0.1/dvwa-master/vulnerabilities/xss_d/?default=English</a><script>alert(/xss/);</script></p>
-<p>####写入页面的效果是这样的</p>
-<pre><code>&lt;option value=&apos;变量lang 的值&apos;&gt;English&lt;script&gt;alert(/xss/);&lt;/script&gt;&lt;/option&gt;
-</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/9202951-490db77fa8e73548.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>###构造攻击语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/dvwa-master/vulnerabilities/xss_d/?default=English&lt;script&gt;alert(/xss/);&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>####写入页面的效果是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;option value=&apos;变量lang 的值&apos;&gt;English&lt;script&gt;alert(/xss/);&lt;/script&gt;&lt;/option&gt;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-490db77fa8e73548.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/9202951-729f22677c120d9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>##Medium</p>
 <p>####查看服务端源代码<br><img src="https://upload-images.jianshu.io/upload_images/9202951-fbdc78b755c680ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
@@ -286,18 +285,17 @@
 <p>header() 函数向客户端发送原始的 HTTP 报头</p>
 <p>header(string,replace,http_response_code)<br>参数    |描述<br>—|:—:<br>string 必需|规定要发送的报头字符串。<br>replace    可选|指示该报头是否替换之前的报头，或添加第二个报头。<br>|默认是 true（替换）。false（允许相同类型的多个报头）。<br>http_response_code可选| 把 HTTP 响应代码强制为指定的值。（PHP 4 以及更高版本可用）</p>
 <p>####由服务端代码  可知  Medium 级别过滤了 <script></p>
-<p>####构造攻击语句</p>
-<pre><code>http://127.0.0.1/dvwa-master/vulnerabilities/xss_d/?default=English&lt;/option&gt;&lt;/select&gt;&lt;img src=1 onerror=alert(/xss/)&gt;
-</code></pre><p>####写入页面的效果是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;option value=&apos;&apos;&gt; English&lt;/option&gt;&lt;/select&gt;&lt;img src=1 onerror=alert(/xss/)&gt;&lt;/option&gt;</span><br></pre></td></tr></table></figure></p>
+<p>####构造攻击语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1/dvwa-master/vulnerabilities/xss_d/?default=English&lt;/option&gt;&lt;/select&gt;&lt;img src=1 onerror=alert(/xss/)&gt;</span><br></pre></td></tr></table></figure></p>
+<p>####写入页面的效果是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;option value=&apos;&apos;&gt; English&lt;/option&gt;&lt;/select&gt;&lt;img src=1 onerror=alert(/xss/)&gt;&lt;/option&gt;</span><br></pre></td></tr></table></figure></p>
 <p>首先闭合了<option>标签  和 <select>标签<br>利用  img标签的onerror事件<br>javascript，img标签支持onerror 事件，在加载图像的过程中如果发生了错误，就会触发onerror事件<br>执行 JavaScript<br><img src="https://upload-images.jianshu.io/upload_images/9202951-539476ebb2ecf194.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/9202951-67fe36be86ddbbaa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>###high</p>
 <p>####查看服务端源代码<br><img src="https://upload-images.jianshu.io/upload_images/9202951-12445eaa73cd7bf8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>###白名单 只允许 传的 default值 为  French  English German  Spanish 其中一个</p>
-<p>####构造攻击语句<br>    <a href="http://www.dvwa.com/vulnerabilities/xss_d/?default=English">http://www.dvwa.com/vulnerabilities/xss_d/?default=English</a> #<script>alert(/xss/)</script></p>
+<p>####构造攻击语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.dvwa.com/vulnerabilities/xss_d/?default=English #&lt;script&gt;alert(/xss/)&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
 <p> ####写入页面的效果是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;option value=&apos;&apos;&gt;English #&lt;script&gt;alert(/xss/)&lt;/script&gt;&lt;/option&gt;</span><br></pre></td></tr></table></figure></p>
 <p>由于  form表单提交的数据 想经过JS 过滤 所以注释部分的javascript 代码 不会被传到服务器端(也就符合了白名单的要求)</p>
-<p>#####我们写一个html 验证一下<option value="">English #<script>alert(/xss/)</script></option>是否可行<br><img src="https://upload-images.jianshu.io/upload_images/9202951-12c5d27ef56288a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>#####我们写一个html 验证一下<option value=''>English #<script>alert(/xss/)</script>是否可行<br><img src="https://upload-images.jianshu.io/upload_images/9202951-12c5d27ef56288a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/9202951-8658f7db642dfe19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/9202951-b0d092d827c57d76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/9202951-293c79cce2f93df0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 <p>##impossible</p>
@@ -393,13 +391,13 @@
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/06/04/hello-world/">Hello World</a>
+                    <a href="/2018/11/11/dvwa_xss(dom)/">Dvwa-xss(DOM)</a>
                 </span>
             </li>
             
             <li class="list-group-item">
                 <span class="post-title">
-                    <a href="/2018/11/11/dvwa_xss(dom)/">Dvwa-xss(DOM)</a>
+                    <a href="/2018/06/04/hello-world/">Hello World</a>
                 </span>
             </li>
             
