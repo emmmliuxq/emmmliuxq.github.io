@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="向前!向前!">
+    
+    <meta name="description" content="nice">
+    
+    
+    
+    
+    
+    
+    <title>向前!向前!</title>
+    <link href=”http://yoursite.com“ rel=”prefetch” />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="http://yoursite.com" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">向前~</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="">
+                    <a href="/tags">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">向前!向前!</a>
+        >
+        <span></span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2018/11/11/dvwa_xss(dom)/"></a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-11-11
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2018/11/11/dvwa_xss(dom)/"></a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-11-11
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>##XSS 简介<br>XSS（Cross Site Script），全称跨站脚本攻击，为了与 CSS（Cascading Style Sheet） 有所区别，所以在安全领域称为 XSS。<br>XSS 攻击，通常指黑客通过 HTML 注入 篡改网页，插入恶意脚本，从而在用户浏览网页时，控制用户浏览器的一种攻击行为。</p>
+<p>#####DOM—based XSS漏洞的产生<br>DOM—based XSS漏洞是基于文档对象模型Document Objeet Model，DOM)的一种漏洞。DOM是一个与平台、编程语言无关的接口，它允许程序或脚本动态地访问和更新文档内容、结构和样式，处理后的结果能够成为显示页面的一部分。DOM中有很多对象，其中一些是用户可以操纵的，如uRI，location，refelTer等。客户端的脚本程序可以通过DOM动态地检查和修改页面内容，它不依赖于提交数据到服务器端，而从客户端获得DOM中的数据在本地执行，如果DOM中的数据没有经过严格确认，就会产生DOM—based XSS漏洞。<br><a href="">DOM简介</a><br><a href="http://www.storysec.com/dvwa-xss-dom.html" target="_blank" rel="noopener">xss DOM</a><br>可能触发DOM型XSS的属性：</p>
+<p>document.referer属性</p>
+<p>window.name属性</p>
+<p>location属性</p>
+<p>innerHTML属性</p>
+<p>documen.write属性</p>
+<p>###1 查看服务端代码<br><img src="https://upload-images.jianshu.io/upload_images/9202951-d33d76c9c0c72f39.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>什么也没有</p>
+<p>####查看页面源代码<br><img src="https://upload-images.jianshu.io/upload_images/9202951-34ce7f375f88b5df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>###相关属性方法解释</p>
+<p>####1 document 和 windows 对象<br>document表示的是一个文档对象，window表示的是一个窗口对象，一个窗口下可以有多个文档对象。</p>
+<p>　　所以一个窗口下只有一个window.location.href，但是可能有多个document.URL、document.location.href</p>
+<p>[window 对象]<br>　　它是一个顶层对象,而不是另一个对象的属性即浏览器的窗口。</p>
+<p>[document 对象]<br>该对象是window和frames对象的一个属性,是显示于窗口或框架内的一个文档。</p>
+<p>document 只是属于window 的一个子对像。</p>
+<p>window.location 包含 href 属性，直接取值赋值时相当于 window.location.href</p>
+<p>window.location.href  当前页面完整 URL</p>
+<p>document.location 包含 href 属性，直接取值赋值时相当于 document.location.href</p>
+<p>document.location.href 当前页面完整 URL</p>
+<p>document.href 没有这个属性</p>
+<p>document.URL 取值时等价于 window.location.href 或 document.location.href。在某些浏览器中通过对 document.URL 赋值来实现页面跳转，但某些浏览器中不行。</p>
+<p>####2 indexOf()方法<br>定义和用法<br>indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。</p>
+<p>indexOf(searchvalue,fromindex)<br>参数|描述<br>—|:—:<br>searchvalue    |必需。规定需检索的字符串值。<br>fromindex    |可选的整数参数。规定在字符串中开始检索的位置。它的合法取值是 0 到 stringObject.length - 1。如省略该参数，则将从字符串的首字符开始检索。<br>注释：indexOf() 方法对大小写敏感！<br>注释：如果要检索的字符串值没有出现，则该方法返回 -1</p>
+<p>####2 substring() 方法<br>substring() 方法用于提取字符串中介于两个指定下标之间的字符。<br>substring(start,stop)</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start    必需。</td>
+<td style="text-align:center">一个非负的整数，规定要提取的子串的第一个字符在 stringObject 中的位置。</td>
+</tr>
+<tr>
+<td>stop    可选。</td>
+<td style="text-align:center">一个非负的整数，比要提取的子串的最后一个字符在 stringObject 中的位置多 1。</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">如果省略该参数，那么返回的子串会一直到字符串的结尾。</td>
+</tr>
+</tbody>
+</table>
+<p>######decodeURI() 函数可对 encodeURI() 函数编码过的 URI 进行解码</p>
+<h4 id="document-write"><a href="#document-write" class="headerlink" title="document.write"></a>document.write</h4><p><a href="https://blog.csdn.net/m0_37589327/article/details/78992784" target="_blank" rel="noopener">document.write详解</a><br>document.write是JavaScript中对document.open所开启的文档流(document stream操作的API方法，它能够直接在文档流中写入字符串，一旦文档流已经关闭，那document.write就会重新利用document.open打开新的文档流并写入，此时原来的文档流会被清空，已渲染好的页面就会被清除，浏览器将重新构建DOM并渲染新的页面</p>
+<p>#####解释script 代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  if (document.location.href.indexOf(&quot;default=&quot;) &gt;= 0)   #判断  &quot;default=&quot; 是否存在</span><br><span class="line">  var lang = document.location.href.substring(document.location.href.indexOf(&quot;default=&quot;)+8) </span><br><span class="line"> # 取出 default 的值  并 赋值给变量lang</span><br><span class="line"></span><br><span class="line">document.write(&quot;&lt;option value=&apos;&quot; + lang + &quot;&apos;&gt;&quot; + decodeURI(lang) + &quot;&lt;/option&gt;&quot;);</span><br><span class="line">写入&lt;option value=&apos;&quot;lang&quot;&apos;&gt;&quot;decodeURL(lang)&lt;/option&gt;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-324042ad9482160f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>所以我们插入的 javascript 代码可以在  decodeURL(lang)  被执行</p>
+<p>###构造攻击语句<br>      <a href="http://127.0.0.1/dvwa-master/vulnerabilities/xss_d/?default=English" target="_blank" rel="noopener">http://127.0.0.1/dvwa-master/vulnerabilities/xss_d/?default=English</a><script>alert(/xss/);</script></p>
+<p>####写入页面的效果是这样的</p>
+<pre><code>&lt;option value=&apos;变量lang 的值&apos;&gt;English&lt;script&gt;alert(/xss/);&lt;/script&gt;&lt;/option&gt;
+</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/9202951-490db77fa8e73548.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-729f22677c120d9d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>##Medium</p>
+<p>####查看服务端源代码<br><img src="https://upload-images.jianshu.io/upload_images/9202951-fbdc78b755c680ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>array_key_exists() 函数检查某个数组中是否存在指定的键名，如果键名存在则返回 true，如果键名不存在则返回 false。<br>提示：如果指定数组的时候省略了键名，将会生成从 0 开始并以 1 递增的整数键名<br>array_key_exists(key,array)<br>参数    |描述<br>—|:—:<br>key    必需  |规定键名。<br>array    |必需。规定数组<br>stripos() 函数查找字符串在另一字符串中第一次出现的位置（不区分大小写）<br>stripos(string,find,start)</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>string    必需</td>
+<td style="text-align:center">规定被搜索的字符串。</td>
+</tr>
+<tr>
+<td>find    必需</td>
+<td style="text-align:center">规定要查找的字符。</td>
+</tr>
+<tr>
+<td>start    可选</td>
+<td style="text-align:center">规定开始搜索的位置。</td>
+</tr>
+<tr>
+<td>返回值：</td>
+<td style="text-align:center">返回字符串在另一字符串中第一次出现的位置，如果没有找到字符串则返回 FALSE。注释：字符串位置从 0 开始，不是从 1 开始。</td>
+</tr>
+</tbody>
+</table>
+<p>header() 函数向客户端发送原始的 HTTP 报头</p>
+<p>header(string,replace,http_response_code)<br>参数    |描述<br>—|:—:<br>string 必需|规定要发送的报头字符串。<br>replace    可选|指示该报头是否替换之前的报头，或添加第二个报头。<br>|默认是 true（替换）。false（允许相同类型的多个报头）。<br>http_response_code可选| 把 HTTP 响应代码强制为指定的值。（PHP 4 以及更高版本可用）</p>
+<p>####由服务端代码  可知  Medium 级别过滤了 <script></p>
+<p>####构造攻击语句</p>
+<pre><code>http://127.0.0.1/dvwa-master/vulnerabilities/xss_d/?default=English&lt;/option&gt;&lt;/select&gt;&lt;img src=1 onerror=alert(/xss/)&gt;
+</code></pre><p>####写入页面的效果是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;option value=&apos;&apos;&gt; English&lt;/option&gt;&lt;/select&gt;&lt;img src=1 onerror=alert(/xss/)&gt;&lt;/option&gt;</span><br></pre></td></tr></table></figure></p>
+<p>首先闭合了<option>标签  和 <select>标签<br>利用  img标签的onerror事件<br>javascript，img标签支持onerror 事件，在加载图像的过程中如果发生了错误，就会触发onerror事件<br>执行 JavaScript<br><img src="https://upload-images.jianshu.io/upload_images/9202951-539476ebb2ecf194.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-67fe36be86ddbbaa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>###high</p>
+<p>####查看服务端源代码<br><img src="https://upload-images.jianshu.io/upload_images/9202951-12445eaa73cd7bf8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>###白名单 只允许 传的 default值 为  French  English German  Spanish 其中一个</p>
+<p>####构造攻击语句<br>    <a href="http://www.dvwa.com/vulnerabilities/xss_d/?default=English">http://www.dvwa.com/vulnerabilities/xss_d/?default=English</a> #<script>alert(/xss/)</script></p>
+<p> ####写入页面的效果是这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;option value=&apos;&apos;&gt;English #&lt;script&gt;alert(/xss/)&lt;/script&gt;&lt;/option&gt;</span><br></pre></td></tr></table></figure></p>
+<p>由于  form表单提交的数据 想经过JS 过滤 所以注释部分的javascript 代码 不会被传到服务器端(也就符合了白名单的要求)</p>
+<p>#####我们写一个html 验证一下<option value="">English #<script>alert(/xss/)</script></option>是否可行<br><img src="https://upload-images.jianshu.io/upload_images/9202951-12c5d27ef56288a5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-8658f7db642dfe19.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-b0d092d827c57d76.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><img src="https://upload-images.jianshu.io/upload_images/9202951-293c79cce2f93df0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>##impossible</p>
+<p>####服务端源代码<br><img src="https://upload-images.jianshu.io/upload_images/9202951-cddd7da33ca2182a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>不需要做任何事，在客户端处理</p>
+<p>#####网页源代码变了<br><img src="https://upload-images.jianshu.io/upload_images/9202951-8cc9119808e55dcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            向前!向前!
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>nice</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/11/dvwa_xss(dom)/"></a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/06/04/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/06/04/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/11/dvwa_xss(dom)/"></a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+                <li class="">
+                    <a href="/2018/11/11/dvwa_xss(dom)/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                <li class="">
+                    <a href="/2018/11/11/dvwa_xss(dom)/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                <li class="">
+                    <a href="/2018/11/11/dvwa_xss(dom)/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+</div>
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://47.93.6.132/wordpress/" target="_blank">向前</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/emmmliuxq" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://www.jianshu.com/u/cae76dedc83d" target="_blank">简书</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/liu-xiang-qian-28/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 向前!向前! Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+
+</html>
